@@ -7,3 +7,6 @@ project for TRiTPO labs
 3. Перевод чисел в различные системы счисления 
 4. Побитовые операции 
 5. Перевод формул в формат языка Latex
+
+К проекту имеется SRS: https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/SRS.md
+и отдельная папка с мокапами: https://github.com/MilenaVysotskaya650502/Calculator/tree/master/Documentation/mockups
