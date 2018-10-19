@@ -32,10 +32,9 @@
 Приложение разрабатывается на языке Java под Windows.
 
 ### 2.2 Интерфейсы пользователя <a name="2.2"></a>
-Вид приложения имеет в начале [вход в систему](https://balsamiq.cloud/sjozwea/pwu85l/r2278). Затем работа с [меню](https://github.com/Evgeniy999/Restaurant_terminal/blob/master/Documentation/mockups/menu.png), в которой будут представлены ингредиенты и выбор пиццы. Далее вывод информации [чека](https://github.com/Evgeniy999/Restaurant_terminal/blob/master/Documentation/mockups/check_list.png), который будет выводиться в файл.
-
+Вид приложения имеет в начале [главное меню](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/mockups/start_menu.png), в котором содержаться переходы на все остальные экраны. Первый вариант [основной калькулятор](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/mockups/common_calculator.png) (выполняет операции сложение, вычитание, умножение, деление, факториал, возведение в степень, корень квадратный, синус и косинус).Второй вариант [матричный калькулятор](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/mockups/matrix_calculator.png) (выполняет операции сложение, вычитание, умножение, деление, транспонирование, переход к обратоной матрице, умножение на число).Третий вариант [конвертер чисел](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/mockups/number_converter.png) (предоставляет форматы числа: десятичная, двоичная, восьмеричная, шестнадцатеричная). Четвертый вариант [побитовые операции](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/mockups/bit_operations.png) (выполняет операции and, or, not, xor). Пятый вариант [перевод формул в формат Latex](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/mockups/Latex_formulas.png).
 ### 2.3 Характеристики пользователя <a name="2.3"></a>
-Данное приложение представленно для кассиров, барменов и официантов для работы в пиццерии.
+Данное приложение представленно для студентов и работников технической и инженерной сфер.
 
 ## 3. Системные требования <a name="3"></a>
 
