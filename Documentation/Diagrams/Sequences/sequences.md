@@ -10,7 +10,7 @@
 ![Основное меню](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Sequences/seq_main.png)
 
 ### 2. Основной калькулятор<a name="2"></a>
-![Основной калькулятор]https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Sequences/seq_common.png)
+![Основной калькулятор](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Sequences/seq_common.png)
   
 ### 3. Матричный калькулятор<a name="3"></a>
 ![Матричный калькулятор](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Sequences/seq_matrix.png)
