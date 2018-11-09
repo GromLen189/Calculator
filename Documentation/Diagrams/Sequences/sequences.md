@@ -13,7 +13,7 @@
 ![Основной калькулятор](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Sequences/seq_common.png)
   
 ### 3. Матричный калькулятор<a name="3"></a>
-![Матричный калькулятор](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Sequences/seq_matrix.png)
+![Матричный калькулятор](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Sequences/seq_main.png)
 
 ### 4. Бинарный калькулятор<a name="4"></a>
 ![Бинарный калькулятор](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Sequences/seq_binary.png)
