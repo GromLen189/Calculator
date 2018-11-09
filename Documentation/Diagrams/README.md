@@ -1,4 +1,4 @@
 ﻿# UML Диаграммы
-1. [Диаграмма вариантов использования](https://github.com/NasterVill/LightningTunerV2/blob/master/Documents/Diagrams/Use%20Case/Use%20Case.md)
-2. [Диаграмма активности](https://github.com/NasterVill/LightningTunerV2/blob/master/Documents/Diagrams/Activities/Activities.md)
-3. [Диаграмма последовательности](https://github.com/NasterVill/LightningTunerV2/blob/master/Documents/Diagrams/Sequences/Sequences.md)
+1. [Диаграмма вариантов использования](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/UseCase/usecase.md)
+2. [Диаграмма активности](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Activities/activities.md)
+3. [Диаграмма последовательности](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Sequences/sequences.md)
