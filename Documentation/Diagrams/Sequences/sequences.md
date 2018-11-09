@@ -1,17 +1,25 @@
 ﻿# Содержание
-1. [Распознание ноты](#1)
-2. [Смена текущего строя](#2)
-3. [Смена текущей конвенции именования нот](#3)
-4. [Смена текущей темы](#4)
+1. [Основное меню](#1)
+2. [Основной калькулятор](#2)
+3. [Матричный калькулятор](#3)
+4. [Бинарный калькулятор](#4)
+5. [Конвертер чисел](#5)
+6. [Конвертер формул Latex](#6)
 
-### 1. Распознание ноты<a name="1"></a>
-![Распознание ноты](https://github.com/NasterVill/LightningTunerV2/blob/master/Documents/Diagrams/Sequences/Note%20Recognition%20Sequence%20Diagram.PNG)
+### 1. Основное меню<a name="1"></a>
+![Основное меню](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Sequences/seq_main.png)
 
-### 2. Смена текущего строя<a name="2"></a>
-![Смена текущего строя](https://github.com/NasterVill/LightningTunerV2/blob/master/Documents/Diagrams/Sequences/Tuning%20Change%20Sequence%20Diagram.PNG)
+### 2. Основной калькулятор<a name="2"></a>
+![Основной калькулятор]https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Sequences/seq_common.png)
   
-### 3. Смена текущей конвенции именования нот<a name="3"></a>
-![Смена текущей конвенции именования нот](https://github.com/NasterVill/LightningTunerV2/blob/master/Documents/Diagrams/Sequences/Note%20Convention%20Change%20Sequence%20Diagram.PNG)
+### 3. Матричный калькулятор<a name="3"></a>
+![Матричный калькулятор](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Sequences/seq_matrix.png)
 
-### 4. Смена текущей темы<a name="4"></a>
-![Смена текущей темы](https://github.com/NasterVill/LightningTunerV2/blob/master/Documents/Diagrams/Sequences/Theme%20Change%20Sequence%20Diagram.PNG)
+### 4. Бинарный калькулятор<a name="4"></a>
+![Бинарный калькулятор](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Sequences/seq_binary.png)
+
+### 5. Конвертер чисел<a name="4"></a>
+![Конвертер чисел](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Sequences/seq_converter.png)
+
+### 6. Конвертер формул Latex<a name="4"></a>
+![Конвертер формул Latex](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/Sequences/seq_latex.png)
