@@ -9,4 +9,5 @@ project for TRiTPO labs
 5. Перевод формул в формат языка Latex
 
 К проекту имеется SRS: https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/SRS.md
-и отдельная папка с мокапами: https://github.com/MilenaVysotskaya650502/Calculator/tree/master/Documentation/mockups
+Отдельная папка с мокапами: https://github.com/MilenaVysotskaya650502/Calculator/tree/master/Documentation/mockups
+Диаграммы: https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/README.md
