@@ -8,6 +8,6 @@ project for TRiTPO labs
 4. Побитовые операции 
 5. Перевод формул в формат языка Latex
 
-К проекту имеется SRS: https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/SRS.md
-Отдельная папка с мокапами: https://github.com/MilenaVysotskaya650502/Calculator/tree/master/Documentation/mockups
-Диаграммы: https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/README.md
+[К проекту имеется SRS:] (https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/SRS.md)
+[Мокапы:] (https://github.com/MilenaVysotskaya650502/Calculator/tree/master/Documentation/mockups)
+[Диаграммы:] (https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/README.md)
