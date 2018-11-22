@@ -1,6 +1,9 @@
 package by.bsuir.tritpo.control;
 
+import by.bsuir.tritpo.binary.BinaryCalculator;
+import by.bsuir.tritpo.converter.NumberConverter;
 import by.bsuir.tritpo.matrix.MatrixCalculator;
+import com.sun.xml.internal.ws.commons.xmlutil.Converter;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -16,9 +19,7 @@ public class Controller {
 
     @FXML
     public void initialize(){
-        MatrixCalculator matr = new MatrixCalculator();
-        int[][] m1 = {{1,2,3}, {4,5,6}, {7,8,9}};
-        m1 = matr.mul(m1, m1);
+
     }
 
     private void initMatrixHandler() {
