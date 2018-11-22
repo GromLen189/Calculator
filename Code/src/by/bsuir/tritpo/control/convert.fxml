@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="297.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="input" layoutX="109.0" layoutY="103.0" prefHeight="25.0" prefWidth="232.0" />
+      <ChoiceBox fx:id="chooseFormat" layoutX="109.0" layoutY="63.0" prefWidth="150.0" />
+      <Button fx:id="convert" layoutX="341.0" layoutY="103.0" mnemonicParsing="false" text="convert" />
+      <Label layoutX="60.0" layoutY="145.0" text="Bin:" />
+      <Label layoutX="59.0" layoutY="169.0" text="Dec:" />
+      <Label layoutX="59.0" layoutY="194.0" text="Oct:" />
+      <Label layoutX="59.0" layoutY="218.0" text="Hex:" />
+      <Label layoutX="59.0" layoutY="67.0" prefHeight="17.0" prefWidth="42.0" text="Input:" />
+      <Label fx:id="bin" layoutX="109.0" layoutY="145.0" prefHeight="17.0" prefWidth="150.0" />
+      <Label fx:id="dec" layoutX="109.0" layoutY="169.0" prefHeight="17.0" prefWidth="150.0" />
+      <Label fx:id="oct" layoutX="109.0" layoutY="194.0" prefHeight="17.0" prefWidth="150.0" />
+      <Label fx:id="hex" layoutX="109.0" layoutY="218.0" prefHeight="17.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

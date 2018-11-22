@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="321.0" prefWidth="471.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="a" layoutX="119.0" layoutY="47.0" prefHeight="25.0" prefWidth="227.0" />
+      <TextField fx:id="b" layoutX="119.0" layoutY="82.0" prefHeight="25.0" prefWidth="227.0" />
+      <TextField fx:id="result" layoutX="119.0" layoutY="212.0" prefHeight="25.0" prefWidth="227.0" />
+      <Label layoutX="43.0" layoutY="51.0" text="input:" />
+      <Label layoutX="43.0" layoutY="216.0" text="result:" />
+      <Label layoutX="103.0" layoutY="51.0" text="a" />
+      <Label layoutX="102.0" layoutY="86.0" text="b" />
+      <ChoiceBox fx:id="operation" layoutX="119.0" layoutY="148.0" prefWidth="150.0" />
+      <Button fx:id="count" layoutX="286.0" layoutY="148.0" mnemonicParsing="false" text="count" />
+   </children>
+</AnchorPane>

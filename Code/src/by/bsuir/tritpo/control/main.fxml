@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.bsuir.tritpo.control.Controller">
+   <children>
+      <Button fx:id="common" layoutX="31.0" layoutY="55.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="150.0" text="Common Calculator" />
+      <Button fx:id="matrix" layoutX="31.0" layoutY="113.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="150.0" text="Matrix Calculator" />
+      <Button fx:id="binary" layoutX="31.0" layoutY="173.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="150.0" text="Binary Calculator" />
+      <Button fx:id="latex" layoutX="31.0" layoutY="294.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="150.0" text="Latex formula converter" />
+      <Button fx:id="converter" layoutX="31.0" layoutY="231.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="150.0" text="Number converter" />
+      <Pane fx:id="workSpace" layoutX="207.0" layoutY="51.0" prefHeight="288.0" prefWidth="364.0" />
+   </children>
+</AnchorPane>
