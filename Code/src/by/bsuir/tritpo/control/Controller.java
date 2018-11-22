@@ -1,6 +1,8 @@
 package by.bsuir.tritpo.control;
 
+import by.bsuir.tritpo.binary.BinaryCalculator;
 import by.bsuir.tritpo.converter.NumberConverter;
+import by.bsuir.tritpo.validator.BinaryValidator;
 import by.bsuir.tritpo.validator.ConverterValidator;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -24,7 +26,7 @@ public class Controller {
     @FXML ChoiceBox chooseFormatConverter;
     @FXML Label binaryOutput, octalOutput, decimalOutput, hexadecimalOutput;
 
-    private EventHandler<ActionEvent> chooseFormatConverterHandler, chooseOperationBinaryHandler;
+    private EventHandler<ActionEvent> chooseFormatConverterHandler;
     private EventHandler<ActionEvent> addMatrixHandler, subMatrixHandler, mulMatrixHandler;
     private EventHandler<ActionEvent> divMatrixHandler, transpMatrixHandler;
     private EventHandler<ActionEvent> invertMatrixHandler, mulNumMatrixHandler;
@@ -36,8 +38,10 @@ public class Controller {
         initChooseFormatConverterHandler();
         initChooseFormatConverterBox();
         initConvertNumberHandler();
-    }
 
+        initChooseOperationBinaryBox();
+        initCountBinaryHandler();
+    }
 
     private void initChooseFormatConverterBox(){
         String[] list = {"binary", "decimal", "octal", "hexadecimal"};
@@ -93,6 +97,47 @@ public class Controller {
         octalOutput.setText(result.get(1));
         decimalOutput.setText(result.get(2));
         hexadecimalOutput.setText(result.get(3));
+    }
+
+    private void initChooseOperationBinaryBox(){
+        String[] list = {"and", "or", "xor", "not"};
+        for(String status : list) {
+            chooseOperationBinary.getItems().add(status);
+        }
+        chooseOperationBinary.setValue(list[0]);
+    }
+
+    private void initCountBinaryHandler() {
+        countBinaryHandler = e-> {
+
+           BinaryValidator validator = new BinaryValidator();
+            BinaryCalculator calculator = new BinaryCalculator();
+            String number1 = firstNumberBinary.getText();
+            String number2 = secondNumberBinary.getText();
+
+            if (!validator.onlyValidChar(number1)
+                    || !validator.onlyValidChar(number2)) {
+                infoBox("Invalid input", "Warning");
+            } else {
+                int first = Integer.parseInt(number1, 2);
+                int second = Integer.parseInt(number2, 2);
+                switch ((String) chooseOperationBinary.getSelectionModel().getSelectedItem()) {
+                    case "and":
+                        outputBinary.setText(calculator.and(first, second));
+                        break;
+                    case "or":
+                        outputBinary.setText(calculator.or(first, second));
+                        break;
+                    case "xor":
+                        outputBinary.setText(calculator.xor(first, second));
+                        break;
+                    case "not":
+                        outputBinary.setText(calculator.not(first));
+                        break;
+                }
+            }
+        };
+        countBinary.setOnAction(countBinaryHandler);
     }
 
     private static void infoBox(String infoMessage, String titleBar)
