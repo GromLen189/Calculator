@@ -94,7 +94,7 @@ public class Controller {
             NumberConverter calculator = new NumberConverter();
             String input = inputConverter.getText();
 
-            if (!validator.notMoreThanIntMax(input)
+            if (!validator.notMoreThanIntMax(input, converterFormat)
                 || !validator.onlyValidChar(input, converterFormat)) {
                 infoBox("Invalid input", "Warning");
             } else {
@@ -112,7 +112,7 @@ public class Controller {
     }
 
     private void initChooseOperationBinaryBox(){
-        String[] list = {"and", "or", "xor", "not"};
+        String[] list = {"and", "or", "xor", "not a"};
         for(String status : list) {
             chooseOperationBinary.getItems().add(status);
         }
@@ -143,7 +143,7 @@ public class Controller {
                     case "xor":
                         outputBinary.setText(calculator.xor(first, second));
                         break;
-                    case "not":
+                    case "not a":
                         outputBinary.setText(calculator.not(first));
                         break;
                 }
@@ -244,7 +244,7 @@ public class Controller {
             try {
                 double[][] m1 = parser.getMatrix(firstMatrix.getText());
                 String number = numberMulMatrix.getText().trim();
-                if(!number.isEmpty() && !validator.rigthtMulNumber(number)) {
+                if(number.isEmpty() || !validator.rigthtMulNumber(number)) {
                     infoBox("Invalid input", "Warning");
                 } else {
                     outputMatrix.setText(parser.matrixToString(calculator.mulNum(m1,
@@ -283,7 +283,8 @@ public class Controller {
             try {
                 double[][] m1 = parser.getMatrix(firstMatrix.getText());
                 double[][] m2 = parser.getMatrix(secondMatrix.getText());
-                if(!validator.firstRowNumEqualsSecondColNum(m1, m2)) {
+                if(!validator.firstRowNumEqualsSecondColNum(m1, m2)
+                        || !validator.isSquare(m2)) {
                     infoBox("Invalid input", "Warning");
                 } else {
                     outputMatrix.setText(parser.matrixToString(calculator.div(m1, m2)));

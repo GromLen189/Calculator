@@ -1,17 +1,31 @@
 package by.bsuir.tritpo.matrix;
 
-
 import by.bsuir.tritpo.exception.CustomException;
 
+/**
+ * this class contains ;ogic work with matrix.
+ *
+ * @author Milena Vysotskaya
+ * @version 1.0
+ * @since 2018-11-20
+ */
 public class MatrixCalculator {
 
-    public double[][] add(double[][] m1, double[][] m2) {
-        int columnNum = m1.length;
-        int rowNum = m1[0].length;
+    /**
+     * Matrix addition (firstMatrix + secondMatrix)
+     *
+     * @param firstMatrix is 2d array of double matrix values.
+     * @param secondMatrix is 2d array of double matrix values.
+     * @return 2d array with each element value result[i][j] = firstMatrix[i][j] + secondMatrix[i][j].
+     */
+    public double[][] add(final double[][] firstMatrix, final double[][] secondMatrix) {
+        int columnNum = firstMatrix.length;
+        int rowNum = firstMatrix[0].length;
         double[][] result = new double[columnNum][rowNum];
+
         for (int i = 0; i < columnNum; i++) {
            for (int j = 0; j < rowNum; j++) {
-               result[i][j] = m1[i][j] + m2[i][j];
+               result[i][j] = firstMatrix[i][j] + secondMatrix[i][j];
            }
         }
         return result;
@@ -48,7 +62,7 @@ public class MatrixCalculator {
         for (int i = 0; i < columnNum; i++) {
             for (int j = 0; j < rowNum; j++) {
                 for (int z = 0; z < m2.length; z++) {
-                    result[i][j] += m1[i][z] * m2[z][j];   //
+                    result[i][j] += m1[j][z] * m2[z][i];   //
                 }
             }
         }
@@ -73,7 +87,7 @@ public class MatrixCalculator {
         double[][] E = new double[size][size];
 
         if(Double.compare(determinant(m1), 0) == 0) {
-           throw new CustomException("Invert matrix not exist");
+           throw new CustomException("Invert m1 not exist");
         }
 
         for (int i = 0; i < size; i++) {
