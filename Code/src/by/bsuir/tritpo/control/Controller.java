@@ -2,8 +2,12 @@ package by.bsuir.tritpo.control;
 
 import by.bsuir.tritpo.binary.BinaryCalculator;
 import by.bsuir.tritpo.converter.NumberConverter;
+import by.bsuir.tritpo.exception.CustomException;
+import by.bsuir.tritpo.matrix.MatrixCalculator;
+import by.bsuir.tritpo.parser.MatrixParser;
 import by.bsuir.tritpo.validator.BinaryValidator;
 import by.bsuir.tritpo.validator.ConverterValidator;
+import by.bsuir.tritpo.validator.MatrixValidator;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -41,6 +45,14 @@ public class Controller {
 
         initChooseOperationBinaryBox();
         initCountBinaryHandler();
+
+        initAddMatrixHandler();
+        initSubMatrixHandler();
+        initMulMatrixHandler();
+        initTranspMatrixHandler();
+        initMulNumMatrixHandler();
+        initInvertMatrixHandler();
+        initDivMatrixHandler();
     }
 
     private void initChooseFormatConverterBox(){
@@ -138,6 +150,149 @@ public class Controller {
             }
         };
         countBinary.setOnAction(countBinaryHandler);
+    }
+
+    private void initAddMatrixHandler() {
+        addMatrixHandler = e-> {
+
+            MatrixValidator validator = new MatrixValidator();
+            MatrixCalculator calculator = new MatrixCalculator();
+            MatrixParser parser = new MatrixParser();
+
+            try {
+                double[][] m1 = parser.getMatrix(firstMatrix.getText());
+                double[][] m2 = parser.getMatrix(secondMatrix.getText());
+                if(!validator.sameSize(m1, m2)) {
+                    infoBox("Invalid input", "Warning");
+                } else {
+                    outputMatrix.setText(parser.matrixToString(calculator.add(m1, m2)));
+                }
+            } catch (CustomException e1) {
+                infoBox("Invalid input", "Warning");
+            }
+        };
+        addMatrix.setOnAction(addMatrixHandler);
+    }
+
+    private void initSubMatrixHandler() {
+        subMatrixHandler = e-> {
+
+            MatrixValidator validator = new MatrixValidator();
+            MatrixCalculator calculator = new MatrixCalculator();
+            MatrixParser parser = new MatrixParser();
+
+            try {
+                double[][] m1 = parser.getMatrix(firstMatrix.getText());
+                double[][] m2 = parser.getMatrix(secondMatrix.getText());
+                if(!validator.sameSize(m1, m2)) {
+                    infoBox("Invalid input", "Warning");
+                } else {
+                    outputMatrix.setText(parser.matrixToString(calculator.sub(m1, m2)));
+                }
+            } catch (CustomException e1) {
+                infoBox("Invalid input", "Warning");
+            }
+        };
+        subMatrix.setOnAction(subMatrixHandler);
+    }
+
+    private void initMulMatrixHandler() {
+        mulMatrixHandler = e-> {
+
+            MatrixValidator validator = new MatrixValidator();
+            MatrixCalculator calculator = new MatrixCalculator();
+            MatrixParser parser = new MatrixParser();
+
+            try {
+                double[][] m1 = parser.getMatrix(firstMatrix.getText());
+                double[][] m2 = parser.getMatrix(secondMatrix.getText());
+                if(!validator.firstRowNumEqualsSecondColNum(m1, m2)) {
+                    infoBox("Invalid input", "Warning");
+                } else {
+                    outputMatrix.setText(parser.matrixToString(calculator.mul(m1, m2)));
+                }
+            } catch (CustomException e1) {
+                infoBox("Invalid input", "Warning");
+            }
+        };
+        mulMatrix.setOnAction(mulMatrixHandler);
+    }
+
+    private void initTranspMatrixHandler() {
+        transpMatrixHandler = e-> {
+
+            MatrixCalculator calculator = new MatrixCalculator();
+            MatrixParser parser = new MatrixParser();
+
+            try {
+                double[][] m1 = parser.getMatrix(firstMatrix.getText());
+                    outputMatrix.setText(parser.matrixToString(calculator.transpon(m1)));
+            } catch (CustomException e1) {
+                infoBox("Invalid input", "Warning");
+            }
+        };
+        transpMatrix.setOnAction(transpMatrixHandler);
+    }
+
+    private void initMulNumMatrixHandler() {
+        mulNumMatrixHandler = e-> {
+
+            MatrixValidator validator = new MatrixValidator();
+            MatrixCalculator calculator = new MatrixCalculator();
+            MatrixParser parser = new MatrixParser();
+
+            try {
+                double[][] m1 = parser.getMatrix(firstMatrix.getText());
+                String number = numberMulMatrix.getText().trim();
+                if(!number.isEmpty() && !validator.rigthtMulNumber(number)) {
+                    infoBox("Invalid input", "Warning");
+                } else {
+                    outputMatrix.setText(parser.matrixToString(calculator.mulNum(m1,
+                                                                Double.valueOf(number))));
+                }
+            } catch (CustomException e1) {
+                infoBox("Invalid input", "Warning");
+            }
+        };
+        mulNumMatrix.setOnAction( mulNumMatrixHandler);
+    }
+
+    private void initInvertMatrixHandler() {
+        invertMatrixHandler = e-> {
+
+            MatrixCalculator calculator = new MatrixCalculator();
+            MatrixParser parser = new MatrixParser();
+
+            try {
+                double[][] m1 = parser.getMatrix(firstMatrix.getText());
+                outputMatrix.setText(parser.matrixToString(calculator.invert(m1)));
+            } catch (CustomException e1) {
+                infoBox("Invalid input", "Warning");
+            }
+        };
+        invertMatrix.setOnAction(invertMatrixHandler);
+    }
+
+    private void initDivMatrixHandler() {
+        divMatrixHandler = e-> {
+
+            MatrixValidator validator = new MatrixValidator();
+            MatrixCalculator calculator = new MatrixCalculator();
+            MatrixParser parser = new MatrixParser();
+
+            try {
+                double[][] m1 = parser.getMatrix(firstMatrix.getText());
+                double[][] m2 = parser.getMatrix(secondMatrix.getText());
+                if(!validator.firstRowNumEqualsSecondColNum(m1, m2)) {
+                    infoBox("Invalid input", "Warning");
+                } else {
+                    outputMatrix.setText(parser.matrixToString(calculator.div(m1, m2)));
+                }
+            } catch (CustomException e1) {
+                infoBox("Invalid input", "Warning");
+            }
+        };
+        divMatrix.setOnAction(divMatrixHandler);
     }
 
     private static void infoBox(String infoMessage, String titleBar)

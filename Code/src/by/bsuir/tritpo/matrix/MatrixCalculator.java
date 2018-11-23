@@ -1,12 +1,14 @@
 package by.bsuir.tritpo.matrix;
 
 
+import by.bsuir.tritpo.exception.CustomException;
+
 public class MatrixCalculator {
 
-    public int[][] add (int[][] m1, int[][] m2) {
+    public double[][] add(double[][] m1, double[][] m2) {
         int columnNum = m1.length;
         int rowNum = m1[0].length;
-        int[][] result = new int [columnNum][rowNum];
+        double[][] result = new double[columnNum][rowNum];
         for (int i = 0; i < columnNum; i++) {
            for (int j = 0; j < rowNum; j++) {
                result[i][j] = m1[i][j] + m2[i][j];
@@ -15,10 +17,10 @@ public class MatrixCalculator {
         return result;
     }
 
-    public int[][] sub (int[][] m1, int[][] m2) {
+    public double[][] sub(double[][] m1, double[][] m2) {
         int columnNum = m1.length;
         int rowNum = m1[0].length;
-        int[][] result = new int [columnNum][rowNum];
+        double[][] result = new double[columnNum][rowNum];
         for (int i = 0; i < columnNum; i++) {
             for (int j = 0; j < rowNum; j++) {
                 result[i][j] = m1[i][j] - m2[i][j];
@@ -27,10 +29,10 @@ public class MatrixCalculator {
         return result;
     }
 
-    public int[][] mulNum (int[][] m1, int number) {
+    public double[][] mulNum(double[][] m1, double number) {
         int columnNum = m1.length;
         int rowNum = m1[0].length;
-        int[][] result = new int [columnNum][rowNum];
+        double[][] result = new double[columnNum][rowNum];
         for (int i = 0; i < m1.length; i++) {
             for (int j = 0; j < m1[0].length; j++) {
                 result[i][j] = m1[i][j] * number;
@@ -39,13 +41,13 @@ public class MatrixCalculator {
         return result;
     }
 
-    public int[][] mul (int[][] m1, int[][] m2) {
-        int columnNum = m2.length;
-        int rowNum = m1[0].length;
-        int[][] result = new int[columnNum][rowNum];
+    public double[][] mul(double[][] m1, double[][] m2) {
+        int columnNum = m2[0].length;
+        int rowNum = m1.length;
+        double[][] result = new double[columnNum][rowNum];
         for (int i = 0; i < columnNum; i++) {
             for (int j = 0; j < rowNum; j++) {
-                for (int z = 0; z < m2[0].length; z++) {
+                for (int z = 0; z < m2.length; z++) {
                     result[i][j] += m1[i][z] * m2[z][j];   //
                 }
             }
@@ -53,10 +55,10 @@ public class MatrixCalculator {
         return result;
     }
 
-    public int[][] transpon (int[][] m1) {
+    public double[][] transpon(double[][] m1) {
         int columnNum = m1.length;
         int rowNum = m1[0].length;
-        int[][] result = new int[rowNum][columnNum];
+        double[][] result = new double[rowNum][columnNum];
         for (int i = 0; i < columnNum; i++) {
             for (int j = 0; j < rowNum; j++) {
                 result[j][i] = m1[i][j];
@@ -65,47 +67,53 @@ public class MatrixCalculator {
         return result;
     }
 
-    public double[][] revert (int[][] m1) {
-        double temp;
+    public double[][] invert(double[][] m1) throws CustomException {
         int size = m1.length;
-        double[][] result = new double[size][size];
-        if(determinant(m1) == 0) {return result;} ////
+        double temp;
+        double[][] E = new double[size][size];
+
+        if(Double.compare(determinant(m1), 0) == 0) {
+           throw new CustomException("Invert matrix not exist");
+        }
+
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-               if(i == j) {
-                   result[i][j] = 1;
-               } else {
-                   result[i][j] = 0;
-               }
+                E[i][j] = 0f;
+                if (i == j) {
+                    E[i][j] = 1f;
+                }
             }
         }
-        for (int z = 0; z < size; z++) {
-            temp = m1[z][z];
+
+        for (int k = 0; k < size; k++) {
+            temp = m1[k][k];
             for (int j = 0; j < size; j++) {
-                m1[z][j] /= temp;
-                result [z][j] /= temp;
+                m1[k][j] /= temp;
+                E[k][j] /= temp;
             }
-            for (int i = z + 1; i < size; i++) {
-                temp = m1[i][z];
+
+            for (int i = k + 1; i < size; i++) {
+                temp = m1[i][k];
                 for (int j = 0; j < size; j++) {
-                    m1[i][j] -= m1[z][j] * temp;
-                    result [i][j] -= result[z][j] * temp;
+                    m1[i][j] -= m1[k][j] * temp;
+                    E[i][j] -= E[k][j] * temp;
                 }
             }
         }
-        for (int z = size - 1; z > 0; z--) {
-            for (int i = z - 1; i >= 0; i--) {
-                temp = m1[i][z];
+
+        for (int k = size - 1; k > 0; k--) {
+            for (int i = k - 1; i >= 0; i--) {
+                temp = m1[i][k];
                 for (int j = 0; j < size; j++) {
-                    m1[i][j] -= m1[z][j] * temp;
-                    result [i][j] -= result[z][j] * temp;
+                    m1[i][j] -= m1[k][j] * temp;
+                    E[i][j] -= E[k][j] * temp;
                 }
             }
         }
-        return result;
+        return E;
     }
 
-    private double determinant(int m1[][]) {
+    private double determinant(double m1[][]) {
         double det=0;
         int size = m1.length;
         if(size == 1)
@@ -121,10 +129,10 @@ public class MatrixCalculator {
             det=0;
             for(int j1=0;j1<size;j1++)
             {
-                int[][] m = new int[size-1][];
+                double[][] m = new double[size-1][];
                 for(int k=0;k<(size-1);k++)
                 {
-                    m[k] = new int[size-1];
+                    m[k] = new double[size-1];
                 }
                 for(int i=1;i<size;i++)
                 {
@@ -141,5 +149,9 @@ public class MatrixCalculator {
             }
         }
         return det;
+    }
+
+    public double[][] div(double m1[][], double m2[][]) throws CustomException {
+        return  mul(m1, invert(m2));
     }
 }
