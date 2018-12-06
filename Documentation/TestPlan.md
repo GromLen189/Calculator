@@ -54,7 +54,7 @@
 запустить его двйным нажанием мышки. 
 
 ## <a name="par6">6. Представление результатов</a>
-Результаты тестирования представлены в документе [TestResults](https://github.com/Nikita199909/My-Money/blob/develop/Documentation/TestResults.md).
+Результаты тестирования представлены в документе [TestResults](https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/TestResults.md).
 
 ## <a name="par7">7. Выводы</a>
 Данный тестовый план позволяет протестировать основной функционал приложения. Успешное прохождение всех тестов не гарантирует 
