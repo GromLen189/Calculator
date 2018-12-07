@@ -13,3 +13,5 @@ project for TRiTPO labs
 Мокапы: https://github.com/MilenaVysotskaya650502/Calculator/tree/master/Documentation/mockups
 
 Диаграммы: https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/Diagrams/README.md
+
+Тестирование: https://github.com/MilenaVysotskaya650502/Calculator/blob/master/Documentation/TestPlan.md
